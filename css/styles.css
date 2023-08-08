@@ -1,0 +1,289 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap');
+/* quitamos las margenes de todas las etiquetas porque algunas aparecen por defecto */
+*{
+    /* margin es la margen externa */
+    margin: 0;
+    /* padding margen interna */
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+/* creacion de variables css */
+
+:root{
+    --primary-color : #ffff00;
+    --secondary-color : #2396bd;
+    --titulos : 70px;
+    --parrafos : 20px;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+header{
+    width: 100%;
+    /* vh es el del alto de la pantalla */
+    height: 100vh ;
+    position: relative;
+    background: url("../img/bg-header.png");
+    
+    /* background-size es el tamaño del fondo */
+    background-size: cover;
+    /* background-position es la posicion del fondo */
+    background-position: center;
+    /* background-repeat: no-repeat; */
+}
+
+header nav{
+    width: 70%;
+    background: transparent;
+    /* en margin el 0 es la margen para arriba y abajo y el auto para derecha e izquierda */
+    margin: 0 auto;
+    /* display-flex se le pone al contenedor padre para que lo de adentro del contenedor se ponga al lado */
+    display: flex;
+    /* JUSTIFY-CONTENT: es para organizar los elementos en horizontal */
+    /* JUSTIFY-CONTENT: flex-end es para organizar los elementos a la derecha */
+    /* JUSTIFY-CONTENT: flex-start es para organizar los elementos a la izquierda */
+    /* JUSTIFY-CONTENT: flex-center es para centrar los elementos */
+    /* justify-content: space-between para alinear los elementos a los lados */
+    justify-content: space-between;
+    /* align-items es para organizar los elementos en vertical */
+    align-items: center;
+    padding-top: 40px;
+}
+/* para llamar una clase es con punto y id es con numeral */
+header nav .logo{
+    transition: .5s;
+}
+header nav .logo:hover{
+    transform: scale(1.1);
+}
+
+header nav .menu{
+    display: flex;
+}
+
+/* por norma tecnica solo se usan 3 selectores */
+/* SEO es el posicionamiento de la web */
+nav .menu li{
+    margin: 0 13px;
+    /* LIST-STYLE: NONE; sirve para quitar los puntos de la lista */
+    list-style: none;
+}
+
+/* aca se le da estilo a la letra de la lista */
+.menu li a{
+    color:  #fff;
+    font-size: var(--parrafos);
+    /* text-decoration: none es para quitar las decoraciones por defecto del texto */
+    text-decoration: none;
+    padding: 10px 15px;
+    transition: .5s;
+}
+
+/* Siempre que se vaya a poner un :HOVER hay que poner la transicion */
+/* y el :HOVER es el efecto que se hace cuando se ponga el cursos encima del elemento */
+.menu li a:hover{
+    border-bottom: 2px solid #fff;
+}
+
+/* el HERO va con # porque es un ID */
+header #hero{
+    width: 50%;
+    min-width: 650px;
+    background-color: transparent;
+    margin: 200px auto;
+    text-align: center;
+}
+
+header #hero img{
+    transition: .5s;
+    cursor: pointer;
+}
+
+header #hero img:hover{
+    transform: rotate(360deg);
+}
+
+header #hero h1{
+    color: var(--primary-color);
+    font-size: var(--titulos);
+}
+
+header #hero p{
+    color: #ffffff;
+    font-size: var(--parrafos);
+}
+
+header #hero button{
+    margin-top: 75px;
+    background: var(--primary-color);
+    padding: 8px 15px;
+    font-size: 38px;
+    color: #999;
+    border-radius: 10px;
+    border-color: transparent;
+    transition: .5s;
+    cursor: pointer;
+}
+
+header #hero button:hover{
+    background: #fff;
+    border-radius: 10px;
+}
+
+#planes{
+    width: 100%;
+    text-align: center;
+    padding: 180px 0;
+    background: #fff;
+}
+
+#planes h2{
+    font-size: var(--titulos);
+    font-weight: 700;
+    margin-bottom: 40px;
+}
+
+#planes p{
+    font-size: var(--parrafos);
+    color: #000;
+}
+
+#planes .fila{
+    width: 70%;
+    min-height: 100px;
+    display: flex;
+    margin: 40px auto;
+    background: transparent;
+    justify-content: space-around;
+}
+/* POSITION: RELATIVE esto sirve para ponerle posicion solo para el lugar de planes*/
+#planes .fila .col-plan{
+    position: relative;
+}
+
+
+.fila .col-plan h3{
+    /* text-transform: uppercase lo que hace es poner el texto todo en mayuscula */
+    text-transform: uppercase;
+    color: var(--primary-color);
+    font-size: 26px;
+    position: absolute;
+    top: 100px;
+    width: 100%;
+    text-align: center;
+    /* Z-INDEX sirve para capas */
+    z-index: 9;
+}
+
+.fila .col-plan img{
+    transition: .9s;
+}
+
+.fila .col-plan img:hover{
+    border-radius: 50%;
+}
+
+#destinos{
+    width: 100%;
+    position: relative;
+    text-align: center;
+    padding: 100px 0 40px;
+    background: url("../img/bg-destinos.png");
+    background-size: cover;
+    background-position: cover;
+}
+
+#destinos h2{
+    color: var(--primary-color);
+    font-size: var(--titulos);
+    margin-bottom: 50px;
+    font-weight: 700;
+}
+
+#destinos .fila{
+    display: flex;
+    justify-content: space-between;
+    width: 64%;
+    margin: 50px auto;
+}
+
+.fila .col-destinos{
+    width: 50%;
+    text-align: center;
+}
+
+.fila .col-destinos h3{
+    color: #fff;
+    font-size: 32px;
+    text-transform: uppercase;
+    margin-top: 10px;
+}
+
+#contacto{
+    width: 100%;
+    position: relative;
+    text-align: center;
+    padding: 100px 0 120px;
+    background: var(--primary-color);
+}
+
+#contacto h2{
+    font-size: var(--titulos);
+    margin-bottom: 40px;
+}
+
+#contacto p{
+    font-size: var(--parrafos);
+    margin-bottom: 40px;
+}
+
+#contacto form{
+    width: 50%;
+    margin: 0 auto;
+}
+
+#contacto form .fila{
+    display: flex;
+}
+
+form .fila input{
+    width: 50%;
+    padding: 8px 12px;
+    font-size: var(--parrafos);
+    margin: 10px 20px;
+}
+
+form .fila select{
+    width: 53%;
+    padding: 8px 12px;
+    font-size: var(--parrafos);
+    margin: 10px 20px;
+}
+
+form button{
+    background: #aeae06;
+    color: #fff;
+    margin-top: 40px;
+    padding: 12px 20px;
+    font-size: 22px;
+    border-radius: 4px;
+    border: transparent;
+}
+
+footer{
+    background: #000;
+    text-align: center;
+    padding: 30px;
+    color: #fff;
+    font-size: 20px;
+    line-height: 28px;
+}
+
+
+
+
+
+
+
